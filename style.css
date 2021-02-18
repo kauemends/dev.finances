@@ -1,14 +1,22 @@
 :root {
-  --color-black: #1a1819;
+  --color-black: #161516;
+  --color-black-light: #252525;
   --color-yellow: #ffc709;
-  --color-yellow-dark: #bda000;
-  --color-gray: #999999;
+  --color-yellow-alt: #ffe138;
+  --color-yellow-dark: #ffa000;
+  --color-gray: #6b6b6b;
+  --color-red: #f52626;
+  --color-green: #06be62;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%;
 }
 
 body {
@@ -29,20 +37,80 @@ h2 {
   font-weight: 400;
 }
 
+a {
+  color: var(--color-yellow);
+  text-decoration: none;
+
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-yellow-alt);
+}
+
+button {
+  width: 100%;
+  height: 50px;
+
+  border: none;
+
+  color: white;
+  background: var(--color-yellow);
+
+  padding: 0;
+  border-radius: 0.2rem;
+
+  cursor: pointer;
+
+  transition: all 0.6s;
+}
+
+button:hover {
+  background: var(--color-yellow-alt);
+}
+
+.button.cancel {
+  color: var(--color-red);
+
+  border: 2px solid var(--color-red);
+  border-radius: 0.2rem;
+
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.6s;
+
+  opacity: 0.6;
+
+  transition: opacity 0.2s;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
 header {
-  background: var(--color-black);
-  padding: 2rem 0 10rem;
+  background-image: linear-gradient(90deg, var(--color-black-light), var(--color-black));
+  padding: 2rem 0 12.5rem;
   text-align: center;
 }
 
 #logo {
-  color: #fff;
+  color: white;
   font-weight: 700;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
 #logo span {
-    color: var(--color-yellow);
+  color: var(--color-yellow);
 }
 
 #balance {
@@ -54,6 +122,18 @@ header {
   margin-top: 0;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .card {
   background: white;
   padding: 1.5rem 2rem;
@@ -61,12 +141,16 @@ header {
 
   margin-bottom: 2rem;
 
-  color: ;
+  color: var(--color-black);
 }
 
 .card h3 {
   font-weight: 400;
   font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card p {
@@ -77,55 +161,145 @@ header {
 }
 
 .card.total {
-    background: var(--color-yellow);
-    color: white;
+  background-image: linear-gradient(90deg, var(--color-yellow), var(--color-yellow-dark));
+  color: white;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
+}
+
+#transaction {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1.5rem;
 }
 
 #data-table {
-    width: 100%;
-    border-spacing: 0 0.5rem;
-
-    color: #707070;
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: var(--color-gray);
 }
 
 table th {
-    background: white;
+  background: white;
 
-    font-weight: 400;
-    padding: 1rem 2rem;
+  font-weight: 400;
+  padding: 1rem 2rem;
 
-    text-align: left;
+  text-align: left;
 }
 
 table tbody tr {
-    opacity: 0.7;
+  opacity: 0.7;
+
+  transition: opacity 0.2s;
 }
 
 table tbody tr:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 table td {
-    background: white;
+  background: white;
 
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
 }
 
 table thead tr th:first-child,
 table tbody tr td:first-child {
-    border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 td.description {
-    color: var(--color-yellow-dark);
+  color: var(--color-gray);
 }
 
 td.income {
-    color: #06be62;
+  color: var(--color-green);
 }
 
 td.expense {
-    color:#f52626
+  color: var(--color-red);
+}
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 5;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #f0f2f5;
+  padding: 2.4rem;
+  width: 90%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.2rem;
+
+  padding: 0.8rem;
+
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group small {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-group.actions button,
+.input-group.actions .button {
+  width: 48%;
+}
+
+.new-transaction {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+
+  color: var(--color-black);
+  font-weight: 400;
 }
 
 footer {
@@ -134,4 +308,16 @@ footer {
   color: var(--color-black);
 
   opacity: 0.6;
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
