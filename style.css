@@ -1,5 +1,5 @@
 :root {
-  --color-black: #161516;
+  --color-black: #222222;
   --color-black-light: #252525;
   --color-yellow: #ffc709;
   --color-yellow-alt: #ffe138;
@@ -58,7 +58,7 @@ button {
   background: var(--color-yellow);
 
   padding: 0;
-  border-radius: 0.2rem;
+  border-radius: 1.5rem;
 
   cursor: pointer;
 
@@ -73,7 +73,7 @@ button:hover {
   color: var(--color-red);
 
   border: 2px solid var(--color-red);
-  border-radius: 0.2rem;
+  border-radius: 1.5rem;
 
   height: 50px;
 
@@ -98,7 +98,7 @@ button:hover {
 }
 
 header {
-  background-image: linear-gradient(90deg, var(--color-black-light), var(--color-black));
+  background-image: linear-gradient(to right, var(--color-black-light), var(--color-black));
   padding: 2rem 0 12.5rem;
   text-align: center;
 }
@@ -137,11 +137,12 @@ header {
 .card {
   background: white;
   padding: 1.5rem 2rem;
-  border-radius: 0.25rem;
+  border-radius: 1.5rem;
 
   margin-bottom: 2rem;
 
   color: var(--color-black);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
@@ -163,7 +164,7 @@ header {
 .card.total {
   background-image: linear-gradient(90deg, var(--color-yellow), var(--color-yellow-dark));
   color: white;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 #transaction {
@@ -206,12 +207,12 @@ table td {
 
 table thead tr th:first-child,
 table tbody tr td:first-child {
-  border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: 1.5rem 0 0 1.5rem;
 }
 
 table thead tr th:last-child,
 table tbody tr td:last-child {
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 1.5rem 1.5rem 0;
 }
 
 td.description {
@@ -268,7 +269,7 @@ td.expense {
 
 input {
   border: none;
-  border-radius: 0.2rem;
+  border-radius: 1.5rem;
 
   padding: 0.8rem;
 
