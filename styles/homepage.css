@@ -17,6 +17,7 @@
 
 html {
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 body {
@@ -68,6 +69,7 @@ a {
   );
   border-radius: 3rem;
   padding: 1rem 2rem;
+  animation: up 1s 1s backwards;
 }
 
 a:hover {
@@ -90,11 +92,19 @@ a:hover {
   font-size: 2rem;
   margin-bottom: 3rem;
   font-weight: 600;
+  animation-name: up;
+  animation-delay: 150ms;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
 }
 
 .content h1 {
   font-size: 7rem;
   margin-bottom: 3rem;
+  animation-name: up;
+  animation-duration: 1s;
+  animation-delay: 350ms;
+  animation-fill-mode: backwards;
 }
 
 .content h1 span {
@@ -102,10 +112,13 @@ a:hover {
 }
 
 .content p {
-  opacity: 0.7;
   font-size: 1.6rem;
   letter-spacing: 0.1rem;
   line-height: 3rem;
+  animation-name: up;
+  animation-duration: 0.9s;
+  animation-delay: 600ms;
+  animation-fill-mode: backwards;
 }
 
 .draw {
@@ -118,7 +131,43 @@ a:hover {
   height: 60rem;
   width: 50.8rem;
   bottom: 0;
+  animation-name: up;
+  animation-duration: 1.3s;
+  animation-delay: 800ms;
+  animation-fill-mode: backwards;
   /* position: absolute; */
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes right {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes button {
