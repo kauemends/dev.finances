@@ -176,6 +176,58 @@ a:hover {
   }
 }
 
+@media (max-width: 1030px) {
+  html {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15rem;
+  }
+
+  .content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .content h1 {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .content h1 span {
+    color: var(--color-yellow);
+  }
+
+  .content p {
+    opacity: 0.7;
+    font-size: 2.5rem;
+    line-height: 5rem;
+  }
+
+  .draw {
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    height: 55%;
+  }
+
+  #draw-image {
+    height: 100%;
+    width: 100%;
+    margin-left: -4.5rem;
+  }
+}
+
 @media (max-width: 800px) {
   html {
     font-size: 58.5%;
@@ -202,7 +254,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10rem;
+    margin-top: 11rem;
   }
 
   .content {
@@ -227,7 +279,7 @@ a:hover {
   .content p {
     opacity: 0.7;
     font-size: 1rem;
-    line-height: -5rem;
+    line-height: 2rem;
   }
 
   .draw {
@@ -247,10 +299,33 @@ a:hover {
   }
 }
 
+@media (max-width: 850px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media (max-width: 650) {
+  html {
+    font-size: 65%;
+  }
+}
+
+@media (max-width: 550px) {
+  #draw-image {
+    visibility: hidden;
+  }
+}
+
 @media (max-width: 415px) {
+  html {
+    font-size: 53.5%
+  }
+
   .draw {
     height: 61.5%;
     width: 92.75%;
+    visibility: hidden;
   }
 }
 
