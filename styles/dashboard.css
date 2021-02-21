@@ -117,6 +117,10 @@ header {
   font-weight: 700;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
   position: absolute;
+  animation-name: up;
+  animation-fill-mode: backwards;
+  animation-delay: 50ms;
+  animation-duration: 1s;
 }
 
 #logo span {
@@ -207,10 +211,28 @@ header {
   margin-top: 1rem;
 }
 
+.card.incomes {
+  animation-name: up;
+  animation-fill-mode: backwards;
+  animation-delay: 200ms;
+  animation-duration: 1s;
+}
+
+.card.expenses {
+  animation-name: up;
+  animation-fill-mode: backwards;
+  animation-delay: 500ms;
+  animation-duration: 1s;
+}
+
 .card.total {
   background-image: linear-gradient(90deg, var(--color-yellow), var(--color-yellow-dark));
   color: white;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  animation: up;
+  animation-fill-mode: backwards;
+  animation-delay: 1s;
+  animation-duration: 1s;
 }
 
 #transaction {
@@ -218,6 +240,7 @@ header {
   width: 100%;
   overflow-x: auto;
   margin-top: 1.5rem;
+  animation: up backwards 1s 1.5s;
 }
 
 #data-table {
@@ -369,6 +392,18 @@ footer {
   color: var(--color-gray);
 
   opacity: 0.6;
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 800px) {
