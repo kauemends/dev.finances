@@ -1,9 +1,9 @@
 :root {
-  --color-black: #222222;
-  --color-black-light: #252525;
+  --color-black: #0e0e0e;
+  --color-black-light: #333333;
   --color-yellow: #ffc709;
-  --color-yellow-alt: #ffe138;
-  --color-yellow-dark: #ffa000;
+  --color-yellow-ligth: #ffe600;
+  --color-yellow-dark: #ffab09;
   --color-gray: #6b6b6b;
   --color-red: #f52626;
   --color-green: #06be62;

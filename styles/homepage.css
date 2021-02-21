@@ -1,0 +1,238 @@
+:root {
+  --color-black: #0e0e0e;
+  --color-black-light: #333333;
+  --color-yellow: #ffc709;
+  --color-yellow-ligth: #ffe600;
+  --color-yellow-dark: #ffab09;
+  --color-gray: #6b6b6b;
+  --color-red: #f52626;
+  --color-green: #06be62;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    var(--color-black-light),
+    var(--color-black)
+  );
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  box-shadow: 0 0 2px rgba(256, 256, 256, 0.3);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 144rem;
+
+  width: 100%;
+}
+
+.left-header {
+  margin-left: 5rem;
+}
+
+#logo {
+  width: 23rem;
+}
+
+.right-header {
+  font-size: 1.8rem;
+  margin-right: 5rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    var(--color-yellow-dark),
+    var(--color-yellow-ligth)
+  );
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+}
+
+a:hover {
+  animation: button 5s infinite linear;
+}
+
+.container {
+  margin: 0 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  color: #fff;
+  margin-top: -4.9rem;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.content h1 {
+  font-size: 7rem;
+  margin-bottom: 3rem;
+}
+
+.content h1 span {
+  color: var(--color-yellow);
+}
+
+.content p {
+  opacity: 0.7;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 3rem;
+}
+
+.draw {
+  display: flex;
+  align-items: flex-end;
+  margin-top: -3.8rem;
+}
+
+#draw-image {
+  height: 60rem;
+  width: 50.8rem;
+  bottom: 0;
+  /* position: absolute; */
+}
+
+@keyframes button {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 58.5%;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .left-header {
+    margin-left: 2rem;
+  }
+
+  #logo {
+    width: 15rem;
+  }
+
+  .right-header {
+    font-size: 1.4rem;
+    margin-right: 2rem;
+  }
+
+  .container {
+    margin: 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+  }
+
+  .content {
+    color: #fff;
+  }
+
+  .content h2 {
+    font-size: 1.16rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .content h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .content h1 span {
+    color: var(--color-yellow);
+  }
+
+  .content p {
+    opacity: 0.7;
+    font-size: 1rem;
+    line-height: -5rem;
+  }
+
+  .draw {
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    height: 55%;
+  }
+
+  #draw-image {
+    height: 100%;
+    width: 100%;
+    margin-left: -4.5rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .draw {
+    height: 61.5%;
+    width: 92.75%;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 53.5%;
+  }
+
+  .draw {
+    height: 55%;
+    width: 84.5%;
+  }
+}
+
+@media (max-width: 375px) {
+  .draw {
+    height: 57.5%;
+    width: 97.5%;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 50%;
+  }
+
+  .draw {
+    height: 50%;
+    width: 73%;
+  }
+}

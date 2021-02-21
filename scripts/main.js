@@ -79,7 +79,7 @@ const DOM = {
         <td class="${CSSclass}">${amount}</td>
         <td class="date">${transaction.date}</td>
         <td>
-            <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remove transaction">
+            <img onclick="Transaction.remove(${index})" src="../assets/minus.svg" alt="Remove transaction">
         </td>
         `
 
