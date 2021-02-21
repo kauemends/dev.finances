@@ -1,24 +1,46 @@
-function switchTheme() {
-    const pageBackground = document.querySelector("body")
-    const modal = document.querySelector(".modal")
-    const newTransaction = document.querySelector(".new-transaction")
-    const transactionSmall = document.querySelector(".input-group small")
+function checkTheme() {
+    const theme = localStorage.getItem("theme")
+    const inputBox = document.querySelector('#theme-switch')
 
-    pageBackground.classList.toggle("dark-theme")
-    modal.classList.toggle("dark-theme")
-    newTransaction.classList.toggle("dark-theme")
-    transactionSmall.classList.toggle("dark-theme")
+    if (theme === "dark") {
+        document.body.classList.add("dark-theme")
+        inputBox.classList.add('active')
+        inputBox.checked = "true"
+        document.querySelector(".theme-switch-box").classList.add("active")
+        document.querySelector(".modal").classList.add("dark-theme")
+        document.querySelector(".new-transaction").classList.add("dark-theme")
+        document.querySelector(".input-group small").classList.add("dark-theme")
+    } else {
+        document.body.classList.remove("dark-theme")
+        inputBox.classList.remove('active')
+        inputBox.checked = "false"
+        document.querySelector(".theme-switch-box").classList.remove("active")
+        document.querySelector(".modal").classList.remove("dark-theme")
+        document.querySelector(".new-transaction").classList.remove("dark-theme")
+        document.querySelector(".input-group small").classList.remove("dark-theme")
+    }
+
+    console.log(theme);
 }
 
-function animationButton() {
-    const inputBox = document.querySelector('#theme-switch');
+checkTheme();
 
-    inputBox.addEventListener('click',()=>{
+function switchTheme() {
+    const inputBox = document.querySelector('#theme-switch')
+
     if (inputBox.checked) {
-        document.querySelector('.main-box').classList.add('active');
+        document.body.classList.add("dark-theme")
+        document.querySelector('.theme-switch-box').classList.add('active')
+        document.querySelector(".modal").classList.add("dark-theme")
+        document.querySelector(".new-transaction").classList.add("dark-theme")
+        document.querySelector(".input-group small").classList.add("dark-theme")
+        localStorage.setItem("theme", "dark")
     } else {
-        document.querySelector('.main-box').classList.remove('active');
+        document.body.classList.remove("dark-theme")
+        document.querySelector('.theme-switch-box').classList.remove('active')
+        document.querySelector(".modal").classList.remove("dark-theme")
+        document.querySelector(".new-transaction").classList.remove("dark-theme")
+        document.querySelector(".input-group small").classList.remove("dark-theme")
+        localStorage.setItem("theme", "light")
     }
-    })
-
 }

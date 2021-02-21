@@ -155,10 +155,6 @@ header {
   transition: all 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.main-box.active {
-  background: var(--color-yellow);
-}
-
 .theme-switch-box.active {
   background-color: var(--color-yellow);
 }
