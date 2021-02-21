@@ -128,9 +128,9 @@ header {
 }
 
 .main-box {
-  margin-left: 50%;
-  width: 5rem;
-  height: 2.5rem;
+  margin-left: 18rem;
+  width: 3rem;
+  height: 1.5rem;
   position: relative;
   border-radius: 100px;
   background-color: #333;
@@ -139,12 +139,12 @@ header {
 
 .theme-switch-box {
   width: 50%;
-  height: 2.25rem;
+  height: 1.125rem;
   background-color: #f0f0f0;
   border-radius: 100px;
   position: absolute;
   top: 50%;
-  left: 2%;
+  left: 5%;
   transform: translate(0%, -50%);
   display: inline-block;
 }
@@ -226,13 +226,19 @@ header {
 }
 
 .card.total {
-  background-image: linear-gradient(90deg, var(--color-yellow), var(--color-yellow-dark));
+  background-image: linear-gradient(90deg,var(--color-yellow),  var(--color-yellow), var(--color-yellow-dark), #fc8600, var(--color-yellow-dark), var(--color-yellow), var(--color-yellow-ligth), var(--color-yellow), var(--color-yellow-dark), var(--color-yellow));
   color: white;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   animation: up;
   animation-fill-mode: backwards;
   animation-delay: 1s;
   animation-duration: 1s;
+  background-position: 100% 0;
+  background-size: 600%;
+  -moz-transition: background 11s ease-in-out;
+  -o-transition: background 11s ease-in-out;
+  -webkit-transition: background 11s ease-in-out;
+  transition: background 11s ease-in-out;
 }
 
 #transaction {
@@ -240,7 +246,7 @@ header {
   width: 100%;
   overflow-x: auto;
   margin-top: 1.5rem;
-  animation: up backwards 1s 1.5s;
+  animation: up backwards 1s 1.4s;
 }
 
 #data-table {
@@ -272,6 +278,10 @@ table td {
   background: white;
 
   padding: 1rem 2rem;
+}
+
+table td img {
+  cursor: pointer;
 }
 
 table thead tr th:first-child,
@@ -415,5 +425,33 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+
+  .main-box {
+    margin-left: 50%;
+    width: 5rem;
+    height: 2.5rem;
+  } 
+
+  .theme-switch-box {
+    width: 50%;
+    height: 2.25rem;
+    top: 50%;
+    left: 5%;
+  }
+}
+
+@media (max-width: 350px) {
+  .main-box {
+    width: 1.5rem;
+    height: 0.75rem;
+    margin-left: 16rem;
+  }
+
+  .theme-switch-box {
+    width: 40%;
+    height: 0.6rem;
+    top: 50%;
+    left: 5%;
   }
 }
