@@ -1,5 +1,6 @@
 :root {
-  --color-black: #0e0e0e;
+  --color-black: #191919;
+  --color-black-dark: #0e0e0e;
   --color-black-light: #333333;
   --color-yellow: #ffc709;
   --color-yellow-ligth: #ffe600;
@@ -22,6 +23,11 @@ html {
 body {
   background: #f0f2f5;
   font-family: "Poppins", sans-serif;
+  transition: background 0.4s;
+}
+
+body.dark-theme {
+  background: var(--color-black);
 }
 
 .container {
@@ -66,7 +72,7 @@ button {
 }
 
 button:hover {
-  background: var(--color-yellow-alt);
+  background: var(--color-yellow-ligth);
 }
 
 .button.cancel {
@@ -98,19 +104,63 @@ button:hover {
 }
 
 header {
-  background-image: linear-gradient(to right, var(--color-black-light), var(--color-black));
+  background-image: linear-gradient(to right, var(--color-black-light), var(--color-black-dark));
   padding: 2rem 0 12.5rem;
-  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 #logo {
   color: white;
   font-weight: 700;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
+  position: absolute;
 }
 
 #logo span {
   color: var(--color-yellow);
+}
+
+.main-box {
+  margin-left: 50%;
+  width: 5rem;
+  height: 2.5rem;
+  position: relative;
+  border-radius: 100px;
+  background-color: #333;
+  display: block;
+}
+
+.theme-switch-box {
+  width: 50%;
+  height: 2.25rem;
+  background-color: #f0f0f0;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translate(0%, -50%);
+  display: inline-block;
+}
+[type="checkbox"] {
+  display: none;
+}
+[type="checkbox"]:checked ~ .theme-switch-box {
+  left: 48%;
+  transition: all 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+[type="checkbox"] ~ .theme-switch-box {
+  transition: all 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.main-box.active {
+  background: var(--color-yellow);
+}
+
+.theme-switch-box.active {
+  background-color: var(--color-yellow);
 }
 
 #balance {
@@ -141,7 +191,7 @@ header {
 
   margin-bottom: 2rem;
 
-  color: var(--color-black);
+  color: var(--color-black-dark);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -257,6 +307,11 @@ td.expense {
   width: 90%;
   max-width: 500px;
   z-index: 1;
+  border-radius: 3rem;
+}
+
+.modal.dark-theme {
+  background: var(--color-black);
 }
 
 #form {
@@ -284,6 +339,11 @@ input {
   opacity: 0.4;
 }
 
+.input-group small.dark-theme {
+  color: #f0f2f5;
+  opacity: 0.3;
+}
+
 .input-group.actions {
   display: flex;
   align-items: center;
@@ -299,14 +359,18 @@ input {
   margin-top: 3.2rem;
   margin-bottom: 0.8rem;
 
-  color: var(--color-black);
+  color: var(--color-black-dark);
   font-weight: 400;
+}
+
+.new-transaction.dark-theme {
+  color: #f0f2f5;
 }
 
 footer {
   text-align: center;
   padding: 4rem 0 2rem;
-  color: var(--color-black);
+  color: var(--color-gray);
 
   opacity: 0.6;
 }
