@@ -31,6 +31,7 @@ function switchTheme() {
     if (inputBox.checked) {
         document.body.classList.add("dark-theme")
         document.querySelector('.theme-switch-box').classList.add('active')
+        document.querySelector('.main-box').classList.add('active')
         document.querySelector(".modal").classList.add("dark-theme")
         document.querySelector(".new-transaction").classList.add("dark-theme")
         document.querySelector(".input-group small").classList.add("dark-theme")
@@ -38,6 +39,7 @@ function switchTheme() {
     } else {
         document.body.classList.remove("dark-theme")
         document.querySelector('.theme-switch-box').classList.remove('active')
+        document.querySelector('.main-box').classList.remove('active')
         document.querySelector(".modal").classList.remove("dark-theme")
         document.querySelector(".new-transaction").classList.remove("dark-theme")
         document.querySelector(".input-group small").classList.remove("dark-theme")

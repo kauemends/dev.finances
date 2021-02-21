@@ -133,14 +133,18 @@ header {
   height: 1.5rem;
   position: relative;
   border-radius: 100px;
-  background-color: #333;
+  background-color: #f0f0f0;
   display: block;
+}
+
+.main-box.active {
+  background-color: #333333;
 }
 
 .theme-switch-box {
   width: 50%;
   height: 1.125rem;
-  background-color: #f0f0f0;
+  background-color: #333333;
   border-radius: 100px;
   position: absolute;
   top: 50%;

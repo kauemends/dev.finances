@@ -64,20 +64,25 @@ a {
   text-decoration: none;
   color: white;
   cursor: pointer;
-  background: linear-gradient(90deg,var(--color-yellow-dark),var(--color-yellow-ligth), var(--color-yellow), var(--color-red), var(--color-yellow),var(--color-yellow-ligth));
+  background: linear-gradient(90deg,var(--color-yellow-dark), var(--color-yellow),var(--color-yellow-ligth), var(--color-yellow), var(--color-yellow-dark), var(--color-red), var(--color-yellow-dark), var(--color-yellow), var(--color-yellow-ligth));
   border-radius: 5rem;
   padding: 1rem 2rem;
   animation: appear 1s backwards;
-  background-size: 600%;
+  background-size: 900%;
+  background-position: 100% 0;
+  -moz-transition: background 12s ease-in-out;
+  -o-transition: background 12s ease-in-out;
+  -webkit-transition: background 12s ease-in-out;
+  transition: background 12s ease-in-out;
 }
 
-a:hover {
+/* a:hover {
   background-position: 100% 0;
   -moz-transition: all 8s ease-in-out;
   -o-transition: all 8s ease-in-out;
   -webkit-transition: all 8s ease-in-out;
   transition: all 8s ease-in-out;
-}
+} */
 
 .container {
   margin: 0 5rem 0;
@@ -142,6 +147,14 @@ a:hover {
   animation-duration: 1.1s;
   animation-delay: 800ms;
   animation-fill-mode: backwards;
+}
+
+@keyframes rgb {
+  0% {
+    filter: hue-rotate(0deg);
+  } 100% {
+    filter: hue-rotate(360deg);
+  }
 }
 
 @keyframes up {
