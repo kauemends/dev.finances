@@ -76,28 +76,23 @@ a {
   transition: background 12s ease-in-out;
 }
 
-/* a:hover {
-  background-position: 100% 0;
-  -moz-transition: all 8s ease-in-out;
-  -o-transition: all 8s ease-in-out;
-  -webkit-transition: all 8s ease-in-out;
-  transition: all 8s ease-in-out;
-} */
-
 .container {
   margin: 0 5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .content {
   color: #fff;
   margin-top: -4.9rem;
+  width: 50%;
+  height: auto;
 }
 
 .content h2 {
-  font-size: 2rem;
+  font-size: 3.1rem;
   margin-bottom: 3rem;
   font-weight: 600;
   animation-name: up;
@@ -107,7 +102,7 @@ a {
 }
 
 .content h1 {
-  font-size: 7rem;
+  font-size: 10.6rem;
   margin-bottom: 3rem;
   animation-name: up;
   animation-duration: 1s;
@@ -124,7 +119,7 @@ a {
 }
 
 .content p {
-  font-size: 1.6rem;
+  font-size: 2.3rem;
   letter-spacing: 0.1rem;
   line-height: 3rem;
   animation-name: up;
@@ -136,12 +131,14 @@ a {
 .draw {
   display: flex;
   align-items: flex-end;
-  margin-top: -3.8rem;
+  margin-top: -2.9rem;
+  width: 50%;
+  height: auto;
 }
 
 #draw-image {
-  height: 60rem;
-  width: 50.8rem;
+  height: auto;
+  width: 100%;
   bottom: 0;
   animation-name: up;
   animation-duration: 1.1s;
@@ -312,19 +309,49 @@ a {
   }
 }
 
+@media (max-width: 1400px) {
+
+  .container {
+    display: flex;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+  }
+
+  .content h1 {
+    font-size: 7rem;
+  }
+
+  .content p {
+    font-size: 1.6rem;
+  }
+
+  #draw-image {
+    height: 100%;
+    width: auto;
+  }
+}
+
 @media (max-width: 850px) {
   html {
-    font-size: 85%;
+    font-size: 35%;
+  }
+
+  .container {
+    margin-top: 0;
   }
 }
 
 @media (max-width: 650) {
   html {
-    font-size: 65%;
+    font-size: 30%;
   }
-}
 
-@media (max-width: 550px) {
+  .content {
+    margin-bottom: 10rem;
+  }
+
   #draw-image {
     visibility: hidden;
   }
@@ -332,19 +359,13 @@ a {
 
 @media (max-width: 415px) {
   html {
-    font-size: 53.5%
-  }
-
-  .draw {
-    height: 61.5%;
-    width: 92.75%;
-    visibility: hidden;
+    font-size: 25%
   }
 }
 
 @media (max-width: 360px) {
   html {
-    font-size: 53.5%;
+    font-size: 22.5%;
   }
 
   .draw {
@@ -353,20 +374,8 @@ a {
   }
 }
 
-@media (max-width: 375px) {
-  .draw {
-    height: 57.5%;
-    width: 97.5%;
-  }
-}
-
 @media (max-width: 320px) {
   html {
-    font-size: 50%;
-  }
-
-  .draw {
-    height: 50%;
-    width: 73%;
+    font-size: 15%;
   }
 }
